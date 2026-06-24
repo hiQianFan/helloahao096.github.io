@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+.pnpm-store/
 
 # Dist files
 dist/
@@ -18,6 +19,17 @@ lib/
 # IDE setting files
 .idea
 .vscode
+
+# AI assistant local state
+.cursor/
+.agents/
+.claude/
+.codex/
+.continue/
+.gemini/
+.windsurf/
+.aider*
+.mcp.json
 
 # Environment variables
 .env
