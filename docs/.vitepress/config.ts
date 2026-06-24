@@ -5,6 +5,16 @@ import { getProjectEntries } from "./theme/modules/projects/utils/projects";
 import type {UserConfig} from "vitepress";
 // import {buildBlogRSS} from "./theme/rss";
 
+const siteUrl = "https://blog.mapin.net";
+const defaultImage = `${siteUrl}/QianFan.jpg`;
+
+function pageUrl(relativePath: string) {
+    const path = relativePath
+        .replace(/(^|\/)index\.md$/, "$1")
+        .replace(/\.md$/, "/");
+
+    return new URL(path || "/", siteUrl).href;
+}
 
 async function config() {
     // 动态导入 ESM 插件，避免 esbuild 在加载配置时使用 require
@@ -41,10 +51,26 @@ async function config() {
             ["link", {rel: "icon", type: "image/jpg", href: "/QianFan.jpg",},],
             ['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
             ["meta", {name: "author", content: "QianFan",},],
-            ["meta", {property: "og:title", content: "Home",},],
-            ["meta", {property: "og:description", content: "Home of QianFan",},],
 
         ],
+        transformHead({ pageData }) {
+            const title = pageData.frontmatter.title || pageData.title || "QianFan";
+            const description = pageData.frontmatter.description || "Home of QianFan";
+            const url = pageUrl(pageData.relativePath);
+
+            return [
+                ["link", { rel: "canonical", href: url }],
+                ["meta", { property: "og:type", content: "article" }],
+                ["meta", { property: "og:title", content: title }],
+                ["meta", { property: "og:description", content: description }],
+                ["meta", { property: "og:url", content: url }],
+                ["meta", { property: "og:image", content: defaultImage }],
+                ["meta", { name: "twitter:card", content: "summary_large_image" }],
+                ["meta", { name: "twitter:title", content: title }],
+                ["meta", { name: "twitter:description", content: description }],
+                ["meta", { name: "twitter:image", content: defaultImage }],
+            ];
+        },
         cleanUrls: "with-subfolders" as any, // 启用 clean URLs，去掉 .html 后缀
         lastUpdated: true,
         // https://juejin.cn/post/7042206108458909727
@@ -121,7 +147,7 @@ async function config() {
                 },
             ],
             socialLinks: [
-                {icon: "github", link: "https://github.com/helloAhao096"},
+                {icon: "github", link: "https://github.com/hiQianFan"},
                 {
                     icon: {
                         svg: `<svg role="img" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="20">
