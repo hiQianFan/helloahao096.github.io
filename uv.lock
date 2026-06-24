@@ -63,7 +63,7 @@ wheels = [
 ]
 
 [[package]]
-name = "helloahao096-github-io"
+name = "hiqianfan-github-io"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

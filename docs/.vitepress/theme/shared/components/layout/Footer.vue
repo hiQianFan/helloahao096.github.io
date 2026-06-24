@@ -2,7 +2,7 @@
   <footer>
     <Counter/>
     Powered by
-    <a href="https://github.com/helloAhao096" target="_blank" title="作者">
+    <a href="https://github.com/hiQianFan" target="_blank" title="作者">
       QianFan
     </a>
 

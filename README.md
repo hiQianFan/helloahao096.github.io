@@ -1,4 +1,4 @@
-# 📝 Ahao's Blog
+# 📝 QianFan's Blog
 
 > 基于 VitePress 打造的个人博客与主题模板，集成首页动效、文章自动索引、评论系统、访问统计与 CI/CD，适合直接部署或二次开发。
 

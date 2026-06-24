@@ -1,8 +1,8 @@
 {
-  "name": "vitepress-blog-ahao",
+  "name": "vitepress-blog-qianfan",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ahao <helloahao@icloud.com>",
+  "author": "QianFan <helloahao@icloud.com>",
   "license": "MIT",
   "msvs_version": "2022",
   "devDependencies": {
