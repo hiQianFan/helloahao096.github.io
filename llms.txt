@@ -1,0 +1,60 @@
+# QianFan
+
+> QianFan 的个人博客，主要记录 AI 工具、后端工程化、前端工程化、系统配置、投资与个人项目实践。
+
+本站内容适合用于技术方案检索、实践步骤参考、问题排查和文章摘要生成。优先读取下方 Markdown 版本；需要完整页面上下文时再访问 HTML 页面。
+
+## 博客文章
+- [FastAPI 项目工程化结构设计指南](https://blog.mapin.net/posts/FastAPI%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 FastAPI 后端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案
+- [API 响应模型的设计哲学与范式](https://blog.mapin.net/posts/API%20%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E8%8C%83%E5%BC%8F.md): 梳理成功与失败响应的设计差异背后的逻辑，以及主流 API 的实践与取舍
+- [Xcode给👴爬，脚踢Xcode，IOS开发新范式](https://blog.mapin.net/posts/SwiftUI%20%E5%BC%80%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%B7%A5%E5%85%B7%E9%93%BE%E6%8C%87%E5%8D%97.md): 专注于 macOS 平台的 iOS 开发工具链配置，详细说明 Cursor、Tuist、Mise、Xcodes、xcode-build-server、SwiftFormat、SwiftLint 的协同配合，构建高效、一致的开发环境
+- [giscus 评论数抓取逻辑](https://blog.mapin.net/posts/giscus%E8%AF%84%E8%AE%BA%E6%95%B0%E6%8A%93%E5%8F%96%E9%80%BB%E8%BE%91.md): 梳理 giscus 评论数的获取、路径匹配与映射逻辑，供实现或排查参考
+- [Apple Watch-AnyGo解锁地区限制功能](https://blog.mapin.net/posts/Apple%20Watch-AnyGo%E8%A7%A3%E9%94%81%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%E5%8A%9F%E8%83%BD.md): 通过 AnyGo 模拟定位，在国行 Apple Watch 上开通睡眠呼吸暂停、ECG 心电图、房颤提醒等地区限制功能的操作指南
+- [BMAD 与 OpenSpec 配合使用指南](https://blog.mapin.net/posts/BMAD%20%E4%B8%8E%20OpenSpec%20%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md): 规划层与实现层的组合使用——BMAD 做产品规划与 Story 拆解，OpenSpec 做变更级实现与审计
+- [BMAD 使用指南](https://blog.mapin.net/posts/BMAD%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%20-%20AI%20%E9%A9%B1%E5%8A%A8%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6.md): BMAD (Build More Architect Dreams) AI 驱动敏捷开发框架，从点子到代码的完整流程与使用方式
+- [Windows 11 微PE 重装系统与驱动配置](https://blog.mapin.net/posts/Windows%2011%20%E5%BE%AEPE%20%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B8%8E%E9%A9%B1%E5%8A%A8%E9%85%8D%E7%BD%AE.md): 使用微PE制作启动盘、DiskGenius 硬盘格式化、安装 Windows 11 专业版及主板/显卡驱动，含单盘使用习惯与 AMD 芯片组驱动说明
+- [macOS 外接硬盘初始化与 Time Machine 配置](https://blog.mapin.net/posts/macOS%20%E5%A4%96%E6%8E%A5%E7%A1%AC%E7%9B%98%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%20Time%20Machine%20%E9%85%8D%E7%BD%AE.md): 外接硬盘初始化、存储盘与 Time Machine 备份盘设置，硬盘格式介绍，重点讲解 Windows 与 Mac 通用的 exFAT 格式
+- [Flutter 项目架构与开发手册](https://blog.mapin.net/posts/Flutter%20%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C.md): 面向 Flutter 初学者的完整项目架构设计指南，包含生态概览、目录结构、核心工具（Riverpod、GoRouter、Dio、freezed、Cupertino 等）、分层架构与数据流，帮助你从零构建可维护的 Flutter 应用。
+- [OpenSpec 使用指南](https://blog.mapin.net/posts/OpenSpec%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md): OpenSpec 规范驱动开发工具快速指南，帮助 AI 编程助手与开发者对齐需求
+- [Alembic 数据库迁移完整指南](https://blog.mapin.net/posts/Alembic%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): 基于实际项目经验，提供 Alembic 数据库迁移的完整实战指南。涵盖从零初始化、异步模式配置、开发工作流、生产环境部署到常见坑点解决方案。
+- [FunASR 语音识别部署和使用指南](https://blog.mapin.net/posts/FunASR%20%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md): FunASR 离线文件转写服务 Docker 部署指南和 WebSocket 通信协议详解
+- [Celery 异步任务队列完整指南](https://blog.mapin.net/posts/Celery%20%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): Celery 异步任务队列实战指南，包含 FastAPI 集成、数据库连接管理、异步任务编写、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
+- [LangChain PGVectorStore 完整指南](https://blog.mapin.net/posts/LangChain%20PGVectorStore%20%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): LangChain PGVectorStore 实战指南，包含 FastAPI 集成、数据库连接管理、Embedding API 兼容性配置、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
+- [前后端API路由重定向问题](https://blog.mapin.net/posts/%E5%89%8D%E5%90%8E%E7%AB%AFAPI%E8%B7%AF%E7%94%B1%E9%87%8D%E5%AE%9A%E5%90%91%E9%97%AE%E9%A2%98.md): 解决 Vue + Vite 项目中遇到的 API 请求执行两遍的问题。深入分析 Vite proxy 配置与 FastAPI 路由斜杠不匹配导致的 307 重定向问题，提供完整的排查方法和解决方案。
+- [Vue 3 项目工程化结构设计指南](https://blog.mapin.net/posts/Vue%203%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 Vue 3 前端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案。包含 Store + Composable + Hooks 核心架构模式和混合模式（core/shared/modules）三层结构设计。
+- [车机安装第三方应用](https://blog.mapin.net/posts/%E8%BD%A6%E6%9C%BA%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8.md): 在所有安卓车机上安装第三方应用
+- [Git Branch 分支管理规范指南](https://blog.mapin.net/posts/Git%20Branch%20%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97.md): 统一的 Git 分支命名和管理规范，包括分支类型、命名规则、分支策略（Git Flow、GitHub Flow）、功能分支管理、代码审查流程等，提升团队协作效率和代码质量。
+- [Git Commit 提交规范指南](https://blog.mapin.net/posts/Git%20Commit%20%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97.md): 统一的 Git Commit 提交信息规范，提升代码审查效率、便于生成变更日志、支持后续集成自动化流程。基于 Conventional Commits 标准，提供完整的提交信息格式、类型定义和最佳实践。
+- [GitHub Action一键部署个人博客](https://blog.mapin.net/posts/GitHub%20Action%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.md): GitHub Action 部署 个人博客 踩坑 教程
+- [GitHub Action完整示例详解](https://blog.mapin.net/posts/GitHub%20Action%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B%E8%AF%A6%E8%A7%A3.md): GitHub Action 完整工作流程详解、配置示例、最佳实践
+- [Gitalk配置](https://blog.mapin.net/posts/Gitalk%E9%85%8D%E7%BD%AE.md): vitepress gitalk 配置 总结
+- [Homebrew 设置代理&国内镜像源](https://blog.mapin.net/posts/Homebrew%20%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86&%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90.md): Homebrew 设置代理&国内镜像源
+- [LangGraph 人机环路 interrupt](https://blog.mapin.net/posts/LangGraph%20%E4%BA%BA%E6%9C%BA%E7%8E%AF%E8%B7%AF%20interrupt.md): LangGraph 人机环路 interrupt 完整使用指南
+- [docker 自动化安装部署、配置镜像源](https://blog.mapin.net/posts/docker%20%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%81%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.md): docker 自动化安装部署、配置镜像源
+- [giscus 评论插件配置指南](https://blog.mapin.net/posts/giscus%E8%AF%84%E8%AE%BA%E9%85%8D%E7%BD%AE.md): 从启用 GitHub Discussions 到在 VitePress 中完成 giscus 评论集成的完整流程
+- [.gitignore 配置指南](https://blog.mapin.net/posts/gitignore%20%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97.md): 通用的、可复用、可标准化的 .gitignore 配置指南，适用于各种类型的项目，提供分层管理策略和最佳实践
+- [linux service服务配置](https://blog.mapin.net/posts/linux%20service%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE.md): linux service服务配置
+- [linux挂载硬盘拷贝文件](https://blog.mapin.net/posts/linux%E6%8C%82%E8%BD%BDu%E7%9B%98%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6.md): linux挂载硬盘拷贝文件
+- [linux连接蓝牙设备📶](https://blog.mapin.net/posts/linux%E8%BF%9E%E6%8E%A5%E8%93%9D%E7%89%99%E8%AE%BE%E5%A4%87.md): linux连接蓝牙设备
+- [osm离线地图docker服务器搭建流程](https://blog.mapin.net/posts/osm%E7%A6%BB%E7%BA%BF%E5%9C%B0%E5%9B%BEdocker%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.md): osm离线地图docker服务器搭建流程
+- [postgresql 常用命令](https://blog.mapin.net/posts/postgresql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.md): postgresql 常用命令
+- [ubuntu22.04网络配置WLAN&WIFI固定ip](https://blog.mapin.net/posts/ubuntu22.04%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AEWLAN&WIFI%E5%9B%BA%E5%AE%9Aip.md): ubuntu22.04网络配置WLAN&WIFI固定ip
+- [uv Python 包管理器使用指南](https://blog.mapin.net/posts/uv%20Python%20%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md): uv 是由 Astral 开发的极快的 Python 包和项目管理工具，用于替代 pip、pip-tools、pipx、poetry、pyenv、twine、virtualenv 等工具。本文档介绍 uv 的基本概念、安装方法和常用操作。
+- [vitepress自定义静态文件路由](https://blog.mapin.net/posts/vitepress%E8%87%AA%E5%AE%9A%E4%B9%89%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E8%B7%AF%E7%94%B1.md): vitepress自定义静态文件路由
+- [vue&vite的api网络请求proxy设置](https://blog.mapin.net/posts/vue&vite%E7%9A%84api%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82proxy%E8%AE%BE%E7%BD%AE.md): vue&vite的api网络请求proxy设置
+- [vue项目vite全局静态变量配置](https://blog.mapin.net/posts/vue%E9%A1%B9%E7%9B%AEvite%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE.md): vue项目vite全局静态变量配置
+- [vitepress中使用不蒜子网站计数器](https://blog.mapin.net/posts/%E4%B8%8D%E8%92%9C%E5%AD%90%20%E7%BD%91%E7%AB%99%E8%AE%A1%E6%95%B0%E5%99%A8.md): 在博客中添加网站计数器
+- [FastAPI + Vue 3 全栈项目目录结构设计指南](https://blog.mapin.net/posts/%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1.md): 基于实际项目经验，设计前后端分离的全栈项目目录结构，支持开发模式（热重载）和生产模式（容器化部署），提供最小可维护的核心服务配置和可扩展的可选服务集成方案
+- [树莓派4b配置watchdog](https://blog.mapin.net/posts/%E6%A0%91%E8%8E%93%E6%B4%BE4b%E9%85%8D%E7%BD%AEwatchdog.md): 树莓派4b(ubuntu)配置watchdog防止系统卡死
+- [网站自定义鼠标事件](https://blog.mapin.net/posts/%E7%BD%91%E7%AB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6.md): 好看的彩虹鼠标🌈
+
+## 项目
+- [掼蛋计分器](https://blog.mapin.net/projects/%E6%8E%BC%E8%9B%8B%E8%AE%A1%E5%88%86%E5%99%A8%20-%20%E7%BD%91%E9%A1%B5%E7%AB%AF%E5%AE%9E%E6%97%B6%E8%AE%B0%E7%89%8C%E5%B7%A5%E5%85%B7.md): 周末和朋友打掼蛋，打着打着就忘了这轮打几、谁贡牌了？用 Vue 3 写了一个网页端掼蛋计分器，iPad 放旁边当实时记牌器，支持级数进度、进贡关系、打 A 皇冠动画。
+
+## 投资
+- [千帆财富自由计划](https://blog.mapin.net/invest/%E5%8D%83%E5%B8%86%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E8%AE%A1%E5%88%92.md): 个人长期定投与价值投思路，基于价值投资理念的ETF资产配置与定投补仓策略优化思路
+- [千帆财富自由计划 2.0](https://blog.mapin.net/invest/%E5%8D%83%E5%B8%86%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1%E8%AE%A1%E5%88%922.0.md): 基于增强定投法的简化投资策略
+
+## Site
+- [首页](https://blog.mapin.net/)
+- [Sitemap](https://blog.mapin.net/sitemap.xml)
