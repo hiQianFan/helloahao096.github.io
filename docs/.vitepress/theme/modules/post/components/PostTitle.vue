@@ -12,7 +12,7 @@
     >
       <div v-if="publishDate" class="meta-row">
         <span class="meta-leading">
-          <span class="meta-emoji" aria-hidden="true">🗓️</span>
+          <CalendarDays class="meta-icon" aria-hidden="true" />
           <span class="meta-label">发布时间</span>
         </span>
         <span class="meta-value">{{ publishDate }}</span>
@@ -20,7 +20,7 @@
 
       <div v-if="tags.length" class="meta-row meta-row-tags">
         <span class="meta-leading">
-          <span class="meta-emoji" aria-hidden="true">🏷️</span>
+          <Tags class="meta-icon" aria-hidden="true" />
           <span class="meta-label">标签</span>
         </span>
         <div class="meta-value">
@@ -34,6 +34,14 @@
           </a>
         </div>
       </div>
+
+      <div v-if="isPostPage" class="meta-row meta-row-actions">
+        <span class="meta-leading">
+          <Share2 class="meta-icon" aria-hidden="true" />
+          <span class="meta-label">引用</span>
+        </span>
+        <PostActions />
+      </div>
     </section>
   </section>
 </template>
@@ -43,6 +51,8 @@ import { useData, withBase } from "vitepress";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import { CalendarDays, Share2, Tags } from "@lucide/vue";
+import PostActions from "./PostActions.vue";
 
 // 启用 dayjs 时区插件
 dayjs.extend(utc);
@@ -50,6 +60,9 @@ dayjs.extend(timezone);
 
 // 使用响应式引用，而不是 .value 快照
 const { page } = useData();
+const isPostPage = computed(() =>
+  (page.value.relativePath || "").startsWith("posts/")
+);
 
 // 使用 computed 确保响应式更新
 const title = computed(() => page.value.title);
@@ -105,17 +118,15 @@ const getTagLink = (tag: string) => {
   margin-bottom: 1.5rem;
   padding: 1rem 0 1.15rem;
   border-bottom: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
   gap: 0.65rem;
 }
 
 .meta-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 6.25rem minmax(0, 1fr);
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  column-gap: 0.75rem;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--color-text-gray);
@@ -125,20 +136,26 @@ const getTagLink = (tag: string) => {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  flex-shrink: 0;
+  min-width: 0;
+  color: var(--color-text-gray);
 }
 
-.meta-emoji {
-  font-size: 1rem;
-  line-height: 1;
+.meta-icon {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.8;
+  color: var(--color-text-gray);
+  flex: 0 0 auto;
 }
 
 .meta-label {
   color: var(--color-text-gray);
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .meta-value {
+  min-width: 0;
   color: var(--color-primary);
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -148,6 +165,10 @@ const getTagLink = (tag: string) => {
   display: flex;
   gap: 0.35rem;
   flex-wrap: wrap;
+}
+
+.meta-row-actions {
+  align-items: center;
 }
 
 .meta-tag {
@@ -217,8 +238,10 @@ const getTagLink = (tag: string) => {
   }
 
   .meta-row {
-    align-items: flex-start;
-    gap: 0.45rem;
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+    column-gap: 0.65rem;
+    align-items: center;
+    font-size: 0.8rem;
   }
 
   .meta-row-tags .meta-value {

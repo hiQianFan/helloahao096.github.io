@@ -20,15 +20,16 @@
     "vitepress-plugin-mermaid": "^2.0.17"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@giscus/vue": "^3.1.0",
+    "@lucide/vue": "^1.21.0",
     "busuanzi.pure.js": "^1.0.3",
     "cursor-effects": "^1.0.11",
     "dayjs": "^1.11.7",
-    "@giscus/vue": "^3.1.0",
     "pinia": "^2.0.33",
     "vue": "^3.5.12"
   },

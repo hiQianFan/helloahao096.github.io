@@ -35,7 +35,6 @@ import Sponsor from "../../../modules/sponsor/components/Sponsor.vue";
 import Comments from "../../../modules/comment/components/Comments.vue";
 import PostTitle from "../../../modules/post/components/PostTitle.vue";
 import PostOutline from "../../../modules/post/components/PostOutline.vue";
-import PostPager from "../../../modules/post/components/PostPager.vue";
 import MouseEvent from "../effect/MouseEvent.vue";
 import BackToTop from "../effect/BackToTop.vue";
 

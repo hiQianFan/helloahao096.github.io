@@ -1,4 +1,5 @@
 import {resolve} from "node:path";
+import fs from "fs-extra";
 import { getPosts, getPostLength, generateSidebarFromPosts } from "./theme/modules/post/utils/posts";
 import { getInvestEntries } from "./theme/modules/invest/utils/invest";
 import { getProjectEntries } from "./theme/modules/projects/utils/projects";
@@ -11,9 +12,14 @@ const defaultImage = `${siteUrl}/QianFan.jpg`;
 function pageUrl(relativePath: string) {
     const path = relativePath
         .replace(/(^|\/)index\.md$/, "$1")
-        .replace(/\.md$/, "/");
+        .replace(/\.md$/, "");
 
-    return new URL(path || "/", siteUrl).href;
+    return new URL(path || "/", `${siteUrl}/`).href;
+}
+
+function entryUrl(regularPath: string, markdown = false) {
+    const path = regularPath.replace(/\.html$/, markdown ? ".md" : "");
+    return new URL(path, `${siteUrl}/`).href;
 }
 
 async function config() {
@@ -37,6 +43,40 @@ async function config() {
         if (sidebarConfig[0].items.length > 0) {
             console.log('示例文章链接:', sidebarConfig[0].items[0].link);
         }
+    }
+
+    async function buildLlmFiles(outDir: string, srcDir: string) {
+        const entries = [...posts, ...invest, ...projects];
+
+        await Promise.all(
+            entries.map(async (entry) => {
+                const relativeMd = entry.regularPath.replace(/^\//, "").replace(/\.html$/, ".md");
+                await fs.copy(resolve(srcDir, relativeMd), resolve(outDir, relativeMd));
+            })
+        );
+
+        const lines = [
+            "# QianFan",
+            "",
+            "> QianFan 的个人博客，主要记录 AI 工具、后端工程化、前端工程化、系统配置、投资与个人项目实践。",
+            "",
+            "本站内容适合用于技术方案检索、实践步骤参考、问题排查和文章摘要生成。优先读取下方 Markdown 版本；需要完整页面上下文时再访问 HTML 页面。",
+            "",
+            "## 博客文章",
+            ...posts.map((post) => `- [${post.frontMatter.title || "未命名文章"}](${entryUrl(post.regularPath, true)}): ${post.frontMatter.description || "技术文章"}`),
+            "",
+            "## 项目",
+            ...projects.map((project) => `- [${project.frontMatter.title || "未命名项目"}](${entryUrl(project.regularPath, true)}): ${project.frontMatter.description || "项目记录"}`),
+            "",
+            "## 投资",
+            ...invest.map((item) => `- [${item.frontMatter.title || "未命名内容"}](${entryUrl(item.regularPath, true)}): ${item.frontMatter.description || "投资记录"}`),
+            "",
+            "## Site",
+            `- [首页](${siteUrl}/)`,
+            `- [Sitemap](${siteUrl}/sitemap.xml)`,
+        ];
+
+        await fs.writeFile(resolve(outDir, "llms.txt"), `${lines.join("\n")}\n`);
     }
 
     const baseConfig: UserConfig = {
@@ -70,6 +110,9 @@ async function config() {
                 ["meta", { name: "twitter:description", content: description }],
                 ["meta", { name: "twitter:image", content: defaultImage }],
             ];
+        },
+        sitemap: {
+            hostname: siteUrl,
         },
         cleanUrls: "with-subfolders" as any, // 启用 clean URLs，去掉 .html 后缀
         lastUpdated: true,
@@ -158,7 +201,9 @@ async function config() {
                 },
             ],
         },
-        // buildEnd: buildBlogRSS,
+        buildEnd: async (siteConfig) => {
+            await buildLlmFiles(siteConfig.outDir, siteConfig.srcDir);
+        },
         // 开发服务器配置，允许局域网访问
         vite: {
             publicDir: resolve(__dirname, "../public"),
