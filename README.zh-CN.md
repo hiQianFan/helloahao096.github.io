@@ -37,7 +37,7 @@
 - pnpm, Sass, autoprefixer
 - fast-glob, globby, gray-matter, fs-extra, dayjs
 - giscus, busuanzi.pure.js, cursor-effects, Pinia
-- mermaid, vitepress-plugin-mermaid
+- mermaid, @panzoom/panzoom
 
 ## 快速开始
 

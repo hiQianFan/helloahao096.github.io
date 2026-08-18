@@ -33,9 +33,6 @@ lib/
 _bmad/
 _bmad-output/
 
-# Local research spec; project OpenSpec changes remain versioned by default
-openspec/changes/document-agent-context-model/
-
 # Environment variables
 .env
 .env.*

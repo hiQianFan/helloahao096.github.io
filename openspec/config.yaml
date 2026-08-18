@@ -15,13 +15,13 @@ context: |
   ## 站点与目录结构（真实约定）
   - 站点根目录为 `docs/`
   - 博客文章目录为 `docs/posts/`
-  - 博客列表页为 `docs/posts/index.md`，其 frontmatter 需要设置 `sidebar: false`
+  - 博客列表页为 `docs/posts.md`，其 frontmatter 需要设置 `sidebar: false`
   - VitePress 配置：`docs/.vitepress/config.ts`
   - 自定义主题代码：`docs/.vitepress/theme/`
 
   ## 路由/侧边栏生成逻辑（与代码一致）
-  - 文章会通过 `docs/.vitepress/theme/utils/posts.ts` 扫描 `posts/` 下的所有 `.md`（排除 `posts/index.md`）
-  - `frontmatter.date` 会被归一化，并用于按年份分组生成 sidebar
+  - 通用扫描逻辑在 `docs/.vitepress/theme/core/content/entries.ts`，博客适配层在 `docs/.vitepress/theme/modules/post/utils/posts.ts`
+  - `frontmatter.date` 会被归一化；排序和年份分组优先使用 Git `lastUpdated`，缺失时再使用 `date`
   - 站点启用了 `cleanUrls: "with-subfolders"`，sidebar 链接会去掉 `.html` 后缀
 
   ## 文章 frontmatter 约定（请尽量遵守）
@@ -30,7 +30,7 @@ context: |
     - `description`: string（建议）
     - `date`: string（建议：`YYYY-MM-DD HH:mm:ss` 或至少 `YYYY-MM-DD`）
     - `tags`: string[]（建议，且遵循「少而精、尽量复用」原则）
-  - `docs/posts/index.md` 需要：
+  - `docs/posts.md` 需要：
     - `sidebar: false`
     - `title: 博客`
 
@@ -44,7 +44,7 @@ context: |
   - 语言：简体中文
   - 文章结构：优先用二级/三级标题组织内容，先给读者“适用场景/前置条件/步骤/验证/排错”
   - 代码块：标注语言（bash/shell/json/yaml/ts/vue 等），命令可复制即用
-  - 图表：在必要章节可使用 Mermaid 图表（流程图、时序图、类图等）对内容做补充说明；站点已启用 vitepress-plugin-mermaid，可直接在 md 中写 ```mermaid 代码块。
+  - 图表：在必要章节可使用 Mermaid 图表（流程图、时序图、类图等）对内容做补充说明；站点会将 ```mermaid 代码块交给本地 `MermaidDiagram` 组件渲染。
 
   ## 代码修改范围与标准（Vue3 + VitePress）
   - 主要改动会发生在：
@@ -70,7 +70,7 @@ rules:
     - 本仓库的变更主要分两类：写 `docs/posts/*.md` 文章，或修改 `docs/.vitepress/**` 代码。提案必须先明确属于哪一类（或两类都有）。
     - 必须包含 "Goals" 与 "Non-goals"。
     - 写文章类提案：先对用户给出的 post 概念做自底向上拆解与第一性原理分析，输出大纲与编写思路供确认；**在用户确认前不创建、不写入 post 文章的 md**（即不创建 `docs/posts/*.md`；OpenSpec 的 proposal/design/tasks 等 md 照常可创建）。确认后再给出目标落盘路径与预计 frontmatter（至少 title/date/tags）。
-    - 改代码类提案必须点名涉及的文件/目录（例如 `docs/.vitepress/theme/utils/posts.ts`），并说明对路由、sidebar、主题组件的影响面。
+    - 改代码类提案必须点名涉及的文件/目录（例如 `docs/.vitepress/theme/core/content/entries.ts`），并说明对路由、sidebar、主题组件的影响面。
     - 若会影响文章列表/sidebar 生成逻辑，必须说明对 `frontmatter.date/title` 缺失时的行为预期。
 
   design:
