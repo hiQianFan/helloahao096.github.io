@@ -16,5 +16,5 @@ export const GISCUS_CONFIG = {
   theme: "light",
   themeDark: "transparent_dark",
   lang: "zh-CN",
-  loading: "lazy",
+  loading: "eager",
 } as const;
