@@ -23,9 +23,6 @@ function entryUrl(regularPath: string, markdown = false) {
 }
 
 async function config() {
-    // 动态导入 ESM 插件，避免 esbuild 在加载配置时使用 require
-    const { withMermaid } = await import("vitepress-plugin-mermaid");
-
     // 获取所有文章数据
     const posts = await getPosts();
     // 获取投资内容数据（预留给投资模块使用）
@@ -116,6 +113,20 @@ async function config() {
         },
         cleanUrls: "with-subfolders" as any, // 启用 clean URLs，去掉 .html 后缀
         lastUpdated: true,
+        markdown: {
+            config(md) {
+                const fence = md.renderer.rules.fence!;
+                md.renderer.rules.fence = (tokens, index, options, env, self) => {
+                    const token = tokens[index];
+                    if (token.info.trim().split(/\s+/, 1)[0] !== "mermaid") {
+                        return fence(tokens, index, options, env, self);
+                    }
+
+                    const source = Buffer.from(token.content).toString("base64");
+                    return `<MermaidDiagram source="${source}" />`;
+                };
+            },
+        },
         // https://juejin.cn/post/7042206108458909727
         themeConfig: {
             // repo: "clark-cui/homeSite",
@@ -215,6 +226,7 @@ async function config() {
             optimizeDeps: {
                 // Mermaid 依赖的 ESM 包需要提前预构建
                 include: [
+                    "@panzoom/panzoom",
                     "mermaid",
                     "@braintree/sanitize-url",
                     "cytoscape",
@@ -225,7 +237,7 @@ async function config() {
             ssr: {
                 // 将相关依赖标记为内部打包，避免 SSR 阶段 require 失败
                 noExternal: [
-                    "vitepress-plugin-mermaid",
+                    "@panzoom/panzoom",
                     "mermaid",
                     "@braintree/sanitize-url",
                 ],
@@ -233,8 +245,7 @@ async function config() {
         },
     };
     
-    // 使用 withMermaid 包装配置以启用 Mermaid 支持
-    return withMermaid(baseConfig);
+    return baseConfig;
 }
 
 export default config();

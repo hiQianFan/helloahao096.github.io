@@ -13,7 +13,7 @@ import Tools from "./views/tools/Tools.vue";
 import PostsOverview from "./modules/post/views/PostsOverview.vue";
 import InvestOverview from "./modules/invest/views/InvestOverview.vue";
 import ProjectsOverview from "./modules/projects/views/ProjectsOverview.vue";
-import InvestOverview from "./modules/invest/views/InvestOverview.vue";
+import MermaidDiagram from "./modules/mermaid/components/MermaidDiagram.vue";
 import "./custom.css";
 
 export default {
@@ -46,5 +46,6 @@ export default {
     app.component("PostsOverview", PostsOverview);
     app.component("InvestOverview", InvestOverview);
     app.component("ProjectsOverview", ProjectsOverview);
+    app.component("MermaidDiagram", MermaidDiagram);
   },
 };
