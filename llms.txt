@@ -5,6 +5,8 @@
 本站内容适合用于技术方案检索、实践步骤参考、问题排查和文章摘要生成。优先读取下方 Markdown 版本；需要完整页面上下文时再访问 HTML 页面。
 
 ## 博客文章
+- [跨平台应用与状态区图标设计规范：Apple、Android、Windows 与多尺寸派生](https://blog.mapin.net/posts/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E8%B0%83%E7%A0%94.md): 梳理应用图标、界面图标与状态区图标的差异，说明主流平台的交付规则，以及从设计母版派生多尺寸资源的方法。
+- [Code Agent 项目的上下文文件设计指南](https://blog.mapin.net/posts/Code%20Agent%20%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%96%87%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 以 AGENTS.md、项目背景、架构文档和 OpenSpec 构成渐进式披露的最小上下文体系
 - [FastAPI 项目工程化结构设计指南](https://blog.mapin.net/posts/FastAPI%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 FastAPI 后端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案
 - [API 响应模型的设计哲学与范式](https://blog.mapin.net/posts/API%20%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E8%8C%83%E5%BC%8F.md): 梳理成功与失败响应的设计差异背后的逻辑，以及主流 API 的实践与取舍
 - [Xcode给👴爬，脚踢Xcode，IOS开发新范式](https://blog.mapin.net/posts/SwiftUI%20%E5%BC%80%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%B7%A5%E5%85%B7%E9%93%BE%E6%8C%87%E5%8D%97.md): 专注于 macOS 平台的 iOS 开发工具链配置，详细说明 Cursor、Tuist、Mise、Xcodes、xcode-build-server、SwiftFormat、SwiftLint 的协同配合，构建高效、一致的开发环境
