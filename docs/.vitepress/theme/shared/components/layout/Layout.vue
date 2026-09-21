@@ -13,8 +13,9 @@
       <template #doc-after>
         <!-- <PostPager /> -->
         <div v-if="isPostPage" class="sponsor-divider-wrap">
-          <Sponsor />
+          <Sponsor compact />
         </div>
+        <FindMe v-if="isPostPage" />
         <Comments />
       </template>
     </Layout>
@@ -32,6 +33,7 @@ import { useData } from "vitepress";
 
 import Footer from "./Footer.vue";
 import Sponsor from "../../../modules/sponsor/components/Sponsor.vue";
+import FindMe from "../../../modules/contact/components/FindMe.vue";
 import Comments from "../../../modules/comment/components/Comments.vue";
 import PostTitle from "../../../modules/post/components/PostTitle.vue";
 import PostOutline from "../../../modules/post/components/PostOutline.vue";

@@ -19,9 +19,11 @@
 3. **收入明细**：展示赞助者列表（昵称、金额、捐助时间、渠道、备注），按时间倒序。
 4. **支出明细**：展示网站维护支出（用途说明、金额、时间），按时间倒序。
 5. **入口 1（组件内）**：Sponsor 组件中的「🧋喝口奶茶」标题文本本身可点击，点击后跳转至 `/sponsor`；不新增额外「查看赞助明细」等描述文字。
-6. **入口 2（导航栏）**：将 nav 中「关于」改为下拉菜单，包含「关于我」→ `/about`、「🧋 赞助」→ `/sponsor`（带 icon/emoji）。
+6. **入口 2（导航栏）**：将「🧋 赞助」与「关于」并列为一级导航，分别指向 `/sponsor` 与 `/about`。
 7. **数据源**：`sponsors.json`（赞助记录）+ `expenses.json`（支出记录）；手动维护，随站点部署。
-8. **打赏入口**：赞助页底部必须展示 Sponsor 打赏组件（支付宝/微信），方便继续打赏。
+8. **打赏入口**：赞助页介绍后立即展示 Sponsor 打赏组件（支付宝/微信），二维码保持展开，收支公示放在其后。
+9. **交流入口**：抽取共享的「找到我」组件，由 About 页与文章评论区之前共同复用原有全部平台数据，并补充 X / Twitter；顶部社交图标组增加 X。
+10. **文章底部适配**：保留二维码以缩短赞助链路，但使用紧凑样式，区分桌面与移动端操作提示，并消除移动端水平溢出。
 
 ---
 
@@ -45,7 +47,7 @@
 | 新增 | `docs/.vitepress/theme/components/SponsorList.vue` | 收入明细表格，含 scoped 样式 |
 | 新增 | `docs/.vitepress/theme/components/ExpenseList.vue` | 支出明细表格，含 scoped 样式 |
 | 修改 | `docs/.vitepress/theme/components/Sponsor.vue` | 「🧋喝口奶茶」标题改为可点击链接，href 指向 `/sponsor`；不新增额外描述文字 |
-| 修改 | `docs/.vitepress/config.ts` | `themeConfig.nav` 中「关于」由单链接改为 `items` 下拉（关于我、🧋 赞助） |
+| 修改 | `docs/.vitepress/config.ts` | 赞助与关于改为并列一级导航；右侧社交图标组增加 X |
 | 修改 | `docs/.vitepress/theme/index.ts` | 注册 SponsorStats、SponsorList、ExpenseList 为全局组件 |
 
 **不涉及**：`docs/.vitepress/theme/utils/posts.ts`、`sidebar` 生成逻辑、`frontmatter.date/title` 约定。`/sponsor` 为独立 doc 页面，路由由 VitePress 自动生成，不影响 posts 列表与 sidebar。
@@ -59,7 +61,7 @@
 | 路由 | 新增 `/sponsor`（对应 `docs/sponsor.md`），由 VitePress 自动生成；与 posts 路由互不干扰。 |
 | sidebar | `/sponsor` 不纳入 `sidebar['/posts/']` 配置；该页使用默认 doc layout，无自定义 sidebar。 |
 | 主题组件 | 新增 SponsorStats、SponsorList、ExpenseList；修改 Sponsor；均需在 index.ts 中注册（SponsorStats/List/ExpenseList 供 markdown 使用）。 |
-| nav | 「关于」从单链接改为 `items` 下拉，需确保 VitePress 默认主题在移动端与桌面端均支持 `items` 展开。 |
+| nav | 「🧋 赞助」与「关于」为并列一级链接，降低赞助入口的发现成本。 |
 
 ---
 
@@ -188,9 +190,9 @@
 
 ## 验收预期
 
-1. **本地启动**：`pnpm run docs:dev` 启动后，访问 `/sponsor` 可见赞助页，含统计卡片、收入明细表、支出明细表、底部 Sponsor 打赏组件。
+1. **本地启动**：`pnpm run docs:dev` 启动后，访问 `/sponsor` 可见赞助页，顶部直接展示 Sponsor 打赏组件，收支统计与明细位于其后。
 2. **Sponsor 组件**：about 页与文章底部 Sponsor 组件中，点击「🧋喝口奶茶」标题可跳转到 `/sponsor`；不增加额外「查看赞助明细」等文字。
-3. **nav 下拉**：顶部 nav「关于」显示为下拉，包含「关于我」→ `/about`、「🧋 赞助」→ `/sponsor`；移动端可正常展开。
+3. **nav 与联系方式**：顶部 nav 直接显示「🧋 赞助」，右侧有 X 图标；文章底部通过共享组件展示 About 的全部平台入口。
 4. **统计正确**：总收入 = Σ sponsors.amount，总支出 = Σ expenses.amount，结余 = 总收入 - 总支出；空 JSON 或缺失时按边界约定展示。
 5. **样式一致**：SponsorStats、SponsorList、ExpenseList 在各组件内使用 scoped 样式，与 donation-card 风格统一，支持明暗主题；不修改 custom.css。
 

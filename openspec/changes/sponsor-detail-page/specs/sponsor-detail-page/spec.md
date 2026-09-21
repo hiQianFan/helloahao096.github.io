@@ -4,7 +4,7 @@
 
 ### Requirement: 赞助页可访问
 
-系统 SHALL 提供独立页面 `/sponsor`，对应 `docs/sponsor.md`，由 VitePress 自动生成路由。页面 SHALL 包含标题「赞助」、收支统计卡片、收入明细表、支出明细表、Sponsor 打赏组件（支付宝/微信）。
+系统 SHALL 提供独立页面 `/sponsor`，对应 `docs/sponsor.md`，由 VitePress 自动生成路由。页面 SHALL 先展示 Sponsor 打赏组件（支付宝/微信，二维码直接展开），再展示收支统计卡片、收入明细表与支出明细表。
 
 #### Scenario: 访问赞助页
 
@@ -16,9 +16,9 @@
 - **WHEN** 用户在 about 页或文章底部点击 Sponsor 组件中的「🧋喝口奶茶」标题
 - **THEN** 浏览器导航至 `/sponsor`，赞助页展示
 
-#### Scenario: 从 nav 下拉进入
+#### Scenario: 从 nav 一级入口进入
 
-- **WHEN** 用户点击顶部 nav「关于」下拉菜单中的「🧋 赞助」
+- **WHEN** 用户点击顶部 nav 的一级「🧋 赞助」
 - **THEN** 浏览器导航至 `/sponsor`，赞助页展示
 
 ---
@@ -87,11 +87,22 @@ Sponsor 组件的「🧋喝口奶茶」标题 SHALL 为可点击链接，href �
 
 ---
 
-### Requirement: nav 下拉包含赞助（带 icon/emoji）
+### Requirement: nav 一级展示赞助（带 icon/emoji）
 
-顶部 nav 中「关于」SHALL 以下拉菜单形式展示，包含「关于我」链接至 `/about`、「🧋 赞助」链接至 `/sponsor`（带 icon 或 emoji）。下拉菜单 SHALL 在桌面端与移动端均可正常展开。
+顶部 nav SHALL 将「🧋 赞助」与「关于」作为并列一级链接，分别指向 `/sponsor` 与 `/about`。右侧社交图标组 SHALL 包含 X / Twitter 链接 `https://x.com/hiQianFan`。
 
-#### Scenario: nav 下拉可见且可用
+#### Scenario: nav 一级赞助可见且可用
 
 - **WHEN** 用户查看顶部 nav
-- **THEN** 「关于」显示为可展开项，展开后含「关于我」与「🧋 赞助」；点击「🧋 赞助」跳转至 `/sponsor`
+- **THEN** 「🧋 赞助」与「关于」均直接可见；点击「🧋 赞助」跳转至 `/sponsor`
+
+---
+
+### Requirement: 文章底部引导学习交流
+
+文章底部的 Sponsor 区块 SHALL 保留支付宝与微信二维码，使用紧凑样式并在移动端不产生水平溢出。评论区之前 SHALL 通过共享的「找到我」组件展示 GitHub、邮箱、哔哩哔哩、网易云音乐、豆瓣、Steam、微信和 X / Twitter，其中微信号为 `helloAhao_096`。About 页 SHALL 复用同一组件与数据。
+
+#### Scenario: 读者查看文章底部
+
+- **WHEN** 读者阅读到任意文章底部
+- **THEN** 读者先看到紧凑的赞助方式和「找到我」中的全部平台入口，再进入评论区

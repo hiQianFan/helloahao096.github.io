@@ -70,17 +70,19 @@
 
 ## 4. 赞助明细页与 nav
 
-- [x] 4.1 新增 `docs/sponsor.md`，frontmatter 含 `title: 赞助`、`description: 站点赞助与收支公示`；正文依次嵌入 SponsorStats、SponsorList、ExpenseList、Sponsor 打赏组件（带 Markdown 标题分隔）
+- [x] 4.1 新增 `docs/sponsor.md`，frontmatter 含 `title: 赞助`、`description: 站点赞助与收支公示`；正文依次嵌入 Sponsor 打赏组件、SponsorStats、SponsorList、ExpenseList
 
   **验收**：访问 `/sponsor` 可见完整赞助页，含统计、收入明细、支出明细、底部 Sponsor 打赏组件；页面大纲正常。
 
   **回滚**：删除 docs/sponsor.md。
 
-- [x] 4.2 修改 `docs/.vitepress/config.ts` 中 `themeConfig.nav`，将「关于」由单链接改为 `items` 下拉，包含「关于我」→ `/about`、「🧋 赞助」→ `/sponsor`（带 icon/emoji）；`activeMatch` 调整为 `^/(about|sponsor)`
+- [x] 4.2 修改 `docs/.vitepress/config.ts` 中 `themeConfig.nav`，将「🧋 赞助」与「关于」设为并列一级导航，并在右侧社交图标组增加 X
 
   **验收**：顶部 nav「关于」显示为下拉，展开后含「关于我」「🧋 赞助」；点击「🧋 赞助」跳转至 `/sponsor`；移动端可正常展开。
 
   **回滚**：恢复 nav 为 `{ text: "👤 关于", link: "/about", activeMatch: "^/about" }`。
+
+- [x] 4.3 优化文章底部 Sponsor 为紧凑模式，保留二维码，修复移动端溢出并区分设备提示；新增共享 `FindMe` 组件，用于 About 页和评论区之前，并保留 About 原有全部平台
 
 ---
 

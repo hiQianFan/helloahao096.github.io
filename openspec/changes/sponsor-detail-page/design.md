@@ -15,9 +15,9 @@
 ## Goals / Non-Goals
 
 **Goals：**
-- 赞助明细页 `/sponsor`，单页分块布局（统计卡片 → 收入明细 → 支出明细 → 打赏入口）
+- 赞助明细页 `/sponsor`，单页分块布局（打赏入口 → 统计卡片 → 收入明细 → 支出明细）
 - 收支统计：总收入、总支出、结余；数据来自 sponsors.json + expenses.json
-- 入口：Sponsor 组件内链接 + nav「关于」下拉（关于我、赞助明细）
+- 入口：Sponsor 组件内链接 + nav 一级「🧋 赞助」；文章底部复用 About 的全部平台联系方式
 - 手动实现的 Vue 组件，无第三方 UI 库
 
 **Non-Goals：**

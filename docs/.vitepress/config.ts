@@ -192,16 +192,26 @@ async function config() {
                 //     activeMatch: "^/tools",
                 // },
                 {
+                    text: "🧋 赞助",
+                    link: "/sponsor",
+                    activeMatch: "^/sponsor",
+                },
+                {
                     text: "👤 关于",
-                    activeMatch: "^/(about|sponsor)",
-                    items: [
-                        { text: "👤 关于我", link: "/about" },
-                        { text: "🧋 赞助", link: "/sponsor" },
-                    ],
+                    link: "/about",
+                    activeMatch: "^/about",
                 },
             ],
             socialLinks: [
                 {icon: "github", link: "https://github.com/hiQianFan"},
+                {
+                    icon: {
+                        svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+            </svg>`,
+                    },
+                    link: "https://x.com/hiQianFan",
+                },
                 {
                     icon: {
                         svg: `<svg role="img" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="20">

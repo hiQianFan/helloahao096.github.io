@@ -7,6 +7,7 @@ import {
   SponsorList,
   ExpenseList,
 } from "./modules/sponsor";
+import { FindMe } from "./modules/contact";
 import Home from "./modules/home/views/Home.vue";
 import Gallery from "./views/gallery/Gallery.vue";
 import Tools from "./views/tools/Tools.vue";
@@ -40,6 +41,7 @@ export default {
     app.component("SponsorStats", SponsorStats);
     app.component("SponsorList", SponsorList);
     app.component("ExpenseList", ExpenseList);
+    app.component("FindMe", FindMe);
     app.component("Home", Home);
     app.component("Gallery", Gallery);
     app.component("Tools", Tools);
