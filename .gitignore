@@ -41,3 +41,6 @@ _bmad-output/
 
 # Obsidian configuration
 .obsidian/
+
+# Local design review artifacts
+.impeccable/critique/
