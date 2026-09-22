@@ -16,12 +16,13 @@
     "markdown-it": "^13.0.1",
     "mermaid": "^11.12.1",
     "sass": "^1.62.1",
-    "vitepress": "1.6.4"
+    "vitepress": "2.0.0-alpha.20"
   },
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "check:design": "node scripts/check-design-tokens.mjs"
   },
   "dependencies": {
     "@giscus/vue": "^3.1.0",
