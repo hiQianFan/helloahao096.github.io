@@ -6,7 +6,6 @@ tags:
   - RAG
   - LangChain
   - pgvector
-  - FastAPI
 ---
 
 # LangChain PGVectorStore 完整指南

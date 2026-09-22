@@ -5,10 +5,12 @@
 本站内容适合用于技术方案检索、实践步骤参考、问题排查和文章摘要生成。优先读取下方 Markdown 版本；需要完整页面上下文时再访问 HTML 页面。
 
 ## 博客文章
-- [Apple Watch-AnyGo解锁地区限制功能](https://blog.mapin.net/posts/Apple%20Watch-AnyGo%E8%A7%A3%E9%94%81%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%E5%8A%9F%E8%83%BD.md): 通过 AnyGo 模拟定位，在国行 Apple Watch 上开通睡眠呼吸暂停、ECG 心电图、房颤提醒等地区限制功能的操作指南
-- [跨平台应用与状态区图标设计规范：Apple、Android、Windows 与多尺寸派生](https://blog.mapin.net/posts/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E8%B0%83%E7%A0%94.md): 梳理应用图标、界面图标与状态区图标的差异，说明主流平台的交付规则，以及从设计母版派生多尺寸资源的方法。
-- [Code Agent 项目的上下文文件设计指南](https://blog.mapin.net/posts/Code%20Agent%20%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%96%87%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 以 AGENTS.md、项目背景、架构文档和 OpenSpec 构成渐进式披露的最小上下文体系
 - [FastAPI 项目工程化结构设计指南](https://blog.mapin.net/posts/FastAPI%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 FastAPI 后端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案
+- [LangChain PGVectorStore 完整指南](https://blog.mapin.net/posts/LangChain%20PGVectorStore%20%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): LangChain PGVectorStore 实战指南，包含 FastAPI 集成、数据库连接管理、Embedding API 兼容性配置、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
+- [FastAPI + Vue 3 全栈项目目录结构设计指南](https://blog.mapin.net/posts/%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1.md): 基于实际项目经验，设计前后端分离的全栈项目目录结构，支持开发模式（热重载）和生产模式（容器化部署），提供最小可维护的核心服务配置和可扩展的可选服务集成方案
+- [跨平台应用与状态区图标设计规范：Apple、Android、Windows 与多尺寸派生](https://blog.mapin.net/posts/%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E8%B0%83%E7%A0%94.md): 梳理应用图标、界面图标与状态区图标的差异，说明主流平台的交付规则，以及从设计母版派生多尺寸资源的方法。
+- [Apple Watch-AnyGo解锁地区限制功能](https://blog.mapin.net/posts/Apple%20Watch-AnyGo%E8%A7%A3%E9%94%81%E5%9C%B0%E5%8C%BA%E9%99%90%E5%88%B6%E5%8A%9F%E8%83%BD.md): 通过 AnyGo 模拟定位，在国行 Apple Watch 上开通睡眠呼吸暂停、ECG 心电图、房颤提醒等地区限制功能的操作指南
+- [Code Agent 项目的上下文文件设计指南](https://blog.mapin.net/posts/Code%20Agent%20%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%96%87%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 以 AGENTS.md、项目背景、架构文档和 OpenSpec 构成渐进式披露的最小上下文体系
 - [API 响应模型的设计哲学与范式](https://blog.mapin.net/posts/API%20%E5%93%8D%E5%BA%94%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E8%8C%83%E5%BC%8F.md): 梳理成功与失败响应的设计差异背后的逻辑，以及主流 API 的实践与取舍
 - [Xcode给👴爬，脚踢Xcode，IOS开发新范式](https://blog.mapin.net/posts/SwiftUI%20%E5%BC%80%E5%8F%91%E6%96%B0%E8%8C%83%E5%BC%8F%E4%B8%8E%E5%B7%A5%E5%85%B7%E9%93%BE%E6%8C%87%E5%8D%97.md): 专注于 macOS 平台的 iOS 开发工具链配置，详细说明 Cursor、Tuist、Mise、Xcodes、xcode-build-server、SwiftFormat、SwiftLint 的协同配合，构建高效、一致的开发环境
 - [giscus 评论数抓取逻辑](https://blog.mapin.net/posts/giscus%E8%AF%84%E8%AE%BA%E6%95%B0%E6%8A%93%E5%8F%96%E9%80%BB%E8%BE%91.md): 梳理 giscus 评论数的获取、路径匹配与映射逻辑，供实现或排查参考
@@ -21,7 +23,6 @@
 - [Alembic 数据库迁移完整指南](https://blog.mapin.net/posts/Alembic%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): 基于实际项目经验，提供 Alembic 数据库迁移的完整实战指南。涵盖从零初始化、异步模式配置、开发工作流、生产环境部署到常见坑点解决方案。
 - [FunASR 语音识别部署和使用指南](https://blog.mapin.net/posts/FunASR%20%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md): FunASR 离线文件转写服务 Docker 部署指南和 WebSocket 通信协议详解
 - [Celery 异步任务队列完整指南](https://blog.mapin.net/posts/Celery%20%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): Celery 异步任务队列实战指南，包含 FastAPI 集成、数据库连接管理、异步任务编写、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
-- [LangChain PGVectorStore 完整指南](https://blog.mapin.net/posts/LangChain%20PGVectorStore%20%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): LangChain PGVectorStore 实战指南，包含 FastAPI 集成、数据库连接管理、Embedding API 兼容性配置、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
 - [前后端API路由重定向问题](https://blog.mapin.net/posts/%E5%89%8D%E5%90%8E%E7%AB%AFAPI%E8%B7%AF%E7%94%B1%E9%87%8D%E5%AE%9A%E5%90%91%E9%97%AE%E9%A2%98.md): 解决 Vue + Vite 项目中遇到的 API 请求执行两遍的问题。深入分析 Vite proxy 配置与 FastAPI 路由斜杠不匹配导致的 307 重定向问题，提供完整的排查方法和解决方案。
 - [Vue 3 项目工程化结构设计指南](https://blog.mapin.net/posts/Vue%203%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 Vue 3 前端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案。包含 Store + Composable + Hooks 核心架构模式和混合模式（core/shared/modules）三层结构设计。
 - [车机安装第三方应用](https://blog.mapin.net/posts/%E8%BD%A6%E6%9C%BA%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%94%E7%94%A8.md): 在所有安卓车机上安装第三方应用
@@ -46,7 +47,6 @@
 - [vue&vite的api网络请求proxy设置](https://blog.mapin.net/posts/vue&vite%E7%9A%84api%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82proxy%E8%AE%BE%E7%BD%AE.md): vue&vite的api网络请求proxy设置
 - [vue项目vite全局静态变量配置](https://blog.mapin.net/posts/vue%E9%A1%B9%E7%9B%AEvite%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE.md): vue项目vite全局静态变量配置
 - [vitepress中使用不蒜子网站计数器](https://blog.mapin.net/posts/%E4%B8%8D%E8%92%9C%E5%AD%90%20%E7%BD%91%E7%AB%99%E8%AE%A1%E6%95%B0%E5%99%A8.md): 在博客中添加网站计数器
-- [FastAPI + Vue 3 全栈项目目录结构设计指南](https://blog.mapin.net/posts/%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1.md): 基于实际项目经验，设计前后端分离的全栈项目目录结构，支持开发模式（热重载）和生产模式（容器化部署），提供最小可维护的核心服务配置和可扩展的可选服务集成方案
 - [树莓派4b配置watchdog](https://blog.mapin.net/posts/%E6%A0%91%E8%8E%93%E6%B4%BE4b%E9%85%8D%E7%BD%AEwatchdog.md): 树莓派4b(ubuntu)配置watchdog防止系统卡死
 - [网站自定义鼠标事件](https://blog.mapin.net/posts/%E7%BD%91%E7%AB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6.md): 好看的彩虹鼠标🌈
 

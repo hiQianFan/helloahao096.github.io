@@ -5,7 +5,6 @@ date: 2025-11-28 15:23:23
 tags:
   - FastAPI
   - Python
-  - 后端开发
   - 工程化
 ---
 
@@ -2207,4 +2206,3 @@ flowchart TD
 - [isort 导入排序](https://pycqa.github.io/isort/)
 - [mypy 类型检查](https://mypy.readthedocs.io/)
 - [pytest 测试框架](https://docs.pytest.org/)
-
