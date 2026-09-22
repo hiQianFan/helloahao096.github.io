@@ -1,9 +1,9 @@
 <!-- bmad:context -->
-<!-- Verified 2026-08-18 against 529b0f0c65add2bb77d28819beba6ad89d57c886. Managed by bmad-project-context; edits inside this block are replaced on refresh. Keep anything you want preserved outside the markers. -->
+<!-- Verified 2026-09-22 against 4bf270b. Managed by bmad-project-context; edits inside this block are replaced on refresh. Keep anything you want preserved outside the markers. -->
 
 ## QianFan Blog
 
-这是一个以简体中文内容为主的个人技术博客，使用 VitePress、Vue、TypeScript 和 Markdown 构建，包管理器为 pnpm。项目介绍与内容约定见 `README.md` 和 `README.zh-CN.md`。规格驱动的变更与历史设计记录位于 `openspec/`。
+这是一个以简体中文内容为主的个人技术博客，使用 VitePress、Vue、TypeScript 和 Markdown 构建，包管理器为 pnpm。项目介绍见 `README.md` 和 `README.zh-CN.md`；产品目标、视觉系统、当前架构和行为规格分别位于 `PRODUCT.md`、`DESIGN.md`、`docs/architecture.md` 与 `openspec/`。
 
 ## Policy
 
@@ -16,12 +16,15 @@
 
 - 站点配置与 Markdown 构建入口：`docs/.vitepress/config.ts`。
 - 主题组合及 Markdown 全局组件：`docs/.vitepress/theme/index.ts`。
+- 修改视觉、布局或交互时，先读取 `DESIGN.md`；运行时 token 位于 `docs/.vitepress/theme/styles/tokens.css`。
+- 修改系统边界、内容数据流或主题分层时，先读取 `docs/architecture.md`。
 - 修改内容扫描、排序或路由数据时，从 `docs/.vitepress/theme/core/content/entries.ts` 开始，再检查对应的 `modules/*/utils/`。
 - 存在对应 OpenSpec change 时，先读取 `openspec/config.yaml` 与 `openspec/changes/<change-id>/`，再开始实现。
 
 ## Running and verifying
 
 - 修改内容、主题、配置或依赖后运行 `pnpm build`；构建成功是当前仓库的最低验证要求。
+- 修改 `DESIGN.md` 后运行 `pnpm dlx @google/design.md lint DESIGN.md`。
 
 ## Known pitfalls
 

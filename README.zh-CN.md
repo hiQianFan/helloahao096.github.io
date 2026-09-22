@@ -80,7 +80,14 @@ description: 用于文章列表摘要和 SEO 描述。
 ---
 ```
 
-文章会按 `date` 倒序展示。修改内容目录时，请同步检查对应模块下的扫描工具：
+标签用于稳定归档，不用于穷举文章涉及的每个名词：
+
+- 每篇文章建议使用 2 个标签，最多 3 个。
+- 优先复用仓库中已有标签；新增前先搜索 `docs/posts/`，避免同义标签（如“后端”和“后端开发”）并存。
+- 选择能长期复用的技术、平台或主题名称，不把一次性的文章标题片段作为标签。
+- 文章列表最多展示前 2 个标签；标签顺序按重要性排列。
+
+文章优先按 Git `lastUpdated` 倒序展示，取不到时回退到 frontmatter `date`。通用规则位于 `docs/.vitepress/theme/core/content/entries.ts`，修改内容目录时再检查对应领域适配器：
 
 - `docs/.vitepress/theme/modules/post/utils/posts.ts`
 - `docs/.vitepress/theme/modules/projects/utils/projects.ts`
@@ -121,34 +128,13 @@ VITE_GISCUS_CATEGORY_ID=
 
 部署到其他静态托管平台时，上传 `docs/.vitepress/dist` 即可。
 
-## 项目结构
+## 深入了解
 
-```text
-.
-├── docs/
-│   ├── .vitepress/
-│   │   ├── config.ts
-│   │   └── theme/
-│   │       ├── core/
-│   │       ├── modules/
-│   │       │   ├── comment/
-│   │       │   ├── home/
-│   │       │   ├── invest/
-│   │       │   ├── post/
-│   │       │   ├── projects/
-│   │       │   └── sponsor/
-│   │       ├── shared/
-│   │       └── views/
-│   ├── invest/
-│   ├── posts/
-│   ├── projects/
-│   └── public/
-├── .github/workflows/deploy-pages.yml
-├── package.json
-├── pnpm-lock.yaml
-├── README.zh-CN.md
-└── README.md
-```
+- Agent 操作协议：`AGENTS.md`
+- 产品目标：`PRODUCT.md`
+- 视觉设计系统：`DESIGN.md`
+- 当前架构：`docs/architecture.md`
+- 行为规格与变更：`openspec/`
 
 ## 贡献
 

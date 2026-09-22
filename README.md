@@ -80,7 +80,14 @@ description: Used for post summaries and SEO metadata.
 ---
 ```
 
-Posts are sorted by `date` in descending order. If you change content directories, update the matching scanner:
+Tags are stable archive terms, not an exhaustive list of every term mentioned in an article:
+
+- Use 2 tags per post when possible, with a hard maximum of 3.
+- Reuse existing tags first. Search `docs/posts/` before adding one to avoid synonymous tags.
+- Prefer reusable technology, platform, or topic names over one-off phrases copied from the title.
+- The post list displays at most the first 2 tags, so order tags by importance.
+
+Posts are sorted by Git `lastUpdated` in descending order, falling back to frontmatter `date`. Shared behavior lives in `docs/.vitepress/theme/core/content/entries.ts`; when changing content directories, also check the matching domain adapter:
 
 - `docs/.vitepress/theme/modules/post/utils/posts.ts`
 - `docs/.vitepress/theme/modules/projects/utils/projects.ts`
@@ -121,34 +128,13 @@ The current GitHub Actions workflow runs on pushes to `master`:
 
 For other static hosting platforms, upload `docs/.vitepress/dist`.
 
-## Project Structure
+## Further Reading
 
-```text
-.
-├── docs/
-│   ├── .vitepress/
-│   │   ├── config.ts
-│   │   └── theme/
-│   │       ├── core/
-│   │       ├── modules/
-│   │       │   ├── comment/
-│   │       │   ├── home/
-│   │       │   ├── invest/
-│   │       │   ├── post/
-│   │       │   ├── projects/
-│   │       │   └── sponsor/
-│   │       ├── shared/
-│   │       └── views/
-│   ├── invest/
-│   ├── posts/
-│   ├── projects/
-│   └── public/
-├── .github/workflows/deploy-pages.yml
-├── package.json
-├── pnpm-lock.yaml
-├── README.zh-CN.md
-└── README.md
-```
+- Agent instructions: `AGENTS.md`
+- Product context: `PRODUCT.md`
+- Visual design system: `DESIGN.md`
+- Current architecture: `docs/architecture.md`
+- Behavior specifications and changes: `openspec/`
 
 ## Contributing
 
