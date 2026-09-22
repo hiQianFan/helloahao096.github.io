@@ -181,7 +181,7 @@ onBeforeUnmount(() => {
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 0.375rem;
+  border-radius: var(--radius-sm);
   color: var(--vp-c-text-2);
   background: var(--vp-c-bg-soft);
 }
@@ -220,7 +220,7 @@ onBeforeUnmount(() => {
 .mermaid-error {
   padding: 1rem;
   border: 1px solid var(--vp-c-danger-2);
-  border-radius: 0.375rem;
+  border-radius: var(--radius-sm);
   color: var(--vp-c-danger-1);
   background: var(--vp-c-danger-soft);
 }

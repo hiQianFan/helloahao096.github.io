@@ -1,0 +1,83 @@
+:root {
+  /* 品牌绿的裸 RGB 通道。组件用 rgb(var(--color-primary-rgb) / <alpha>)
+     取任意透明度，深色主题只需覆盖这一处，所有半透明用法自动跟随。 */
+  --color-primary-rgb: 8 203 0;
+  /* 阴影的裸 RGB 通道：浅色用品牌绿染色，深色用纯黑加深。 */
+  --color-shadow-rgb: 8 203 0;
+  --color-primary: #08cb00;
+  --color-primary-hover: #06a300;
+  --color-primary-muted: #b5f6ac;
+  --color-accent: #253900;
+  --color-link: #057a00;
+  --color-link-hover: #036600;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-border: rgba(37, 57, 0, 0.15);
+  --color-overlay: rgb(var(--color-primary-rgb) / 0.08);
+  --color-watermark-stroke: rgb(var(--color-primary-rgb) / 0.15);
+  --color-text: #0b1400;
+  --color-text-soft: rgba(11, 20, 0, 0.7);
+  --color-text-muted: rgba(11, 20, 0, 0.6);
+  --color-text-gray: rgba(11, 20, 0, 0.6);
+  --font-sans: "Noto Sans SC", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --shadow-card: 0 18px 35px rgb(var(--color-shadow-rgb) / 0.12);
+
+  /* VitePress 2 品牌色：brand-1 为文字/图标，brand-2 为 hover，
+     brand-3 为实心按钮底色（其文字恒为白色，故必须足够深）。 */
+  --vp-c-brand-1: var(--color-link);
+  --vp-c-brand-2: var(--color-link-hover);
+  --vp-c-brand-3: var(--color-link);
+  --vp-c-brand-soft: var(--color-overlay);
+  --vp-c-bg: var(--color-bg);
+  --vp-c-bg-soft: var(--color-surface);
+  /* 保留 VitePress 的三级文字层次，不压成同一个灰。 */
+  --vp-c-text-1: var(--color-text);
+  --vp-c-text-2: var(--color-text-soft);
+  --vp-c-text-3: var(--color-text-muted);
+  --vp-font-family-base: var(--font-sans);
+  --vp-font-family-mono: var(--font-mono);
+}
+
+.dark {
+  --color-primary-rgb: 74 222 128;
+  --color-shadow-rgb: 0 0 0;
+  --color-primary: #4ade80;
+  --color-primary-hover: #86efac;
+  --color-primary-muted: rgb(var(--color-primary-rgb) / 0.25);
+  --color-accent: #d1fae5;
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-hover);
+  --color-bg: #0f1110;
+  --color-surface: #1a1d1a;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-overlay: rgb(var(--color-primary-rgb) / 0.16);
+  --color-watermark-stroke: rgb(var(--color-primary-rgb) / 0.2);
+  --color-text: #f3f4f6;
+  --color-text-soft: rgba(243, 244, 246, 0.85);
+  --color-text-muted: rgba(243, 244, 246, 0.65);
+  --color-text-gray: rgba(243, 244, 246, 0.7);
+  --shadow-card: 0 18px 35px rgb(var(--color-shadow-rgb) / 0.55);
+  /* brand-1/2/soft 经 --color-link 等自动跟随深色值，无需重复声明。
+     brand-3 是实心按钮底色，深色下改用中绿并把按钮文字翻转为深色，
+     否则默认的白色文字落在亮绿上只有 1.7:1。 */
+  --vp-c-brand-3: #22c55e;
+  --vp-button-brand-text: var(--color-bg);
+  --vp-button-brand-hover-text: var(--color-bg);
+  --vp-button-brand-active-text: var(--color-bg);
+  --vp-c-bg: var(--color-bg);
+  --vp-c-bg-soft: var(--color-surface);
+}

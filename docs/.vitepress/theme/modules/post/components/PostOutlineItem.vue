@@ -40,20 +40,20 @@ defineProps<{
   padding: 0.4rem 0.75rem;
   text-decoration: none;
   color: var(--vp-c-text-1);
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
   line-height: 1.5;
   word-break: break-word;
 }
 
 .outline-link:hover {
-  color: var(--vp-c-brand);
-  background: rgba(8, 203, 0, 0.08);
+  color: var(--vp-c-brand-1);
+  background: rgb(var(--color-primary-rgb) / 0.08);
   transform: translateX(4px);
 }
 
 .outline-link:focus-visible {
-  outline: 2px solid var(--vp-c-brand);
+  outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 2px;
 }
 
@@ -61,7 +61,7 @@ defineProps<{
 .outline-h2 {
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand-1);
   padding-left: 0.75rem;
 }
 
@@ -99,10 +99,7 @@ defineProps<{
   list-style: none;
 }
 
-/* 深色模式适配 */
-:global(.dark) .outline-link:hover {
-  background: rgba(74, 222, 128, 0.15);
-}
+/* hover 底色已随 --color-primary-rgb 自动切换，无需深色覆盖。 */
 
 /* 响应式设计 */
 @media (max-width: 768px) {
@@ -121,12 +118,12 @@ defineProps<{
   }
 
   .outline-h5 {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     padding-left: 2.25rem;
   }
 
   .outline-h6 {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding-left: 2.75rem;
   }
 }

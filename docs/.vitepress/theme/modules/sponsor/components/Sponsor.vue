@@ -72,7 +72,7 @@ const sponsorLink = withBase("/sponsor");
 }
 
 .sponsor-title-link:hover {
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 .sponsor-desc {
@@ -95,7 +95,7 @@ const sponsorLink = withBase("/sponsor");
   max-width: 320px;
   padding: 1rem;
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   text-align: center;
   background-color: var(--color-surface);
   display: flex;
@@ -116,7 +116,7 @@ const sponsorLink = withBase("/sponsor");
   display: block;
   width: 170px;
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   margin: 0 auto;
 }

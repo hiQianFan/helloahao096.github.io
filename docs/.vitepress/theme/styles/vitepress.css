@@ -1,0 +1,87 @@
+/* VitePress 默认主题覆盖；业务组件样式留在对应 SFC。 */
+.vp-doc {
+  color: var(--color-text);
+}
+
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  margin-top: var(--space-2xl);
+  color: var(--color-text);
+  border-top: none;
+}
+
+.vp-doc a {
+  color: var(--color-link);
+  font-weight: 500;
+}
+
+.vp-doc a:hover {
+  color: var(--color-link-hover);
+}
+
+.VPNavBar a,
+.VPNavBarMenu a,
+.VPNavBarMenuLink,
+.VPNavScreen a,
+.VPNavScreenMenuLink {
+  color: var(--color-text-gray) !important;
+  transition: color 0.3s ease;
+}
+
+.VPNavBar a.active,
+.VPNavBarMenu a.active,
+.VPNavBarMenuLink.active,
+.VPNavBar a[aria-current="page"],
+.VPNavBarMenu a[aria-current="page"],
+.VPNavBarMenuLink[aria-current="page"],
+.VPNavScreen a.active,
+.VPNavScreenMenuLink.active,
+.VPNavScreen a[aria-current="page"],
+.VPNavScreenMenuLink[aria-current="page"] {
+  color: var(--color-link) !important;
+}
+
+.VPDocAside .outline-marker {
+  background-color: var(--color-primary) !important;
+}
+
+.VPDocAside .outline-link.active,
+.VPDocAside .outline-link:hover,
+.VPSidebarItem.is-active .text {
+  color: var(--color-link) !important;
+}
+
+.VPSidebarItem .text:hover,
+.VPSidebarItem .link:hover .text {
+  color: var(--color-link-hover) !important;
+}
+
+.VPDocFooter .pager-link {
+  border-color: var(--vp-c-border) !important;
+}
+
+.VPDocFooter .pager-link:hover {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.VPDocFooter .pager-link .desc {
+  font-size: 0.875rem !important;
+}
+
+.VPDocFooter .pager-link .title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-brand-1) !important;
+  line-height: 1.4 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPNavBar a,
+  .VPNavBarMenu a,
+  .VPNavBarMenuLink,
+  .VPNavScreen a,
+  .VPNavScreenMenuLink {
+    transition: none;
+  }
+}

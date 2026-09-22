@@ -129,15 +129,15 @@ const go = (i: number) => {
   font-size: 0.875rem;
   color: var(--color-text);
   border: 2px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   background: var(--color-surface);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
   user-select: none;
 }
 
 .pagination-link:hover {
   border-color: var(--color-primary);
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 .pagination-link.active {

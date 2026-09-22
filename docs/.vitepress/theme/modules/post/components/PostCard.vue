@@ -1,18 +1,16 @@
 <template>
   <a :href="withBase(post.regularPath)" class="post-card">
-    <div class="post-title">{{ post.frontMatter.title }}</div>
+    <div class="post-title" :title="post.frontMatter.title">
+      {{ post.frontMatter.title }}
+    </div>
     <div class="post-right">
       <div class="post-meta">
-        <span class="post-meta-icon">📅</span>
-        <span class="post-meta-value">{{ formatDateTimeNum(post.frontMatter.date || "") }}</span>
-      </div>
-      <div class="post-meta" v-if="post.lastUpdated">
-        <span class="post-meta-icon">📝</span>
-        <span class="post-meta-value">{{ formatDateTimeNum(post.lastUpdated) }}</span>
-      </div>
-      <div class="post-meta">
-        <span class="post-meta-icon">💬</span>
-        <span class="post-meta-value">{{ commentCount }}</span>
+        <span class="post-meta-dot" aria-hidden="true"></span>
+        <span class="post-meta-label">{{ post.lastUpdated ? "最近更新" : "发布于" }}</span>
+        <time class="post-meta-value">{{ postDate }}</time>
+        <span v-if="commentCount > 0" class="post-comment">
+          {{ commentCount }} 条评论
+        </span>
       </div>
       <div class="post-tags" v-if="postTags.length > 0">
         <span
@@ -47,11 +45,15 @@ const commentCount = computed(() => {
   return getCount(props.post.regularPath);
 });
 
+const postDate = computed(() =>
+  formatDateTimeNum(props.post.lastUpdated || props.post.frontMatter.date || "").slice(0, 10),
+);
+
 // 获取文章标签
 const postTags = computed(() => {
   const tags = props.post.frontMatter.tags;
   if (Array.isArray(tags)) {
-    return tags;
+    return tags.slice(0, 2);
   }
   return [];
 });
@@ -60,12 +62,12 @@ const postTags = computed(() => {
 <style scoped>
 .post-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0.875rem 1rem;
   border-bottom: 1px solid var(--color-border);
   background: transparent;
   text-decoration: none;
@@ -78,28 +80,25 @@ const postTags = computed(() => {
   border-bottom-color: var(--color-primary);
 }
 
-.post-title {
-  flex: 1;
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: var(--color-primary);
-  margin: 0;
-  line-height: 1.65;
-  min-width: 0;
-  font-family: var(--font-sans);
-  transition: text-shadow 0.3s ease;
+.post-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-/* 只在支持 hover 的设备上应用 hover 效果（移动端不触发） */
-@media (hover: hover) {
-  .post-card:hover .post-title {
-    text-shadow: 0 0 3px rgba(8, 203, 0, 0.25), 0 0 8px rgba(8, 203, 0, 0.15), 0 0 15px rgba(8, 203, 0, 0.1), 0 0 25px rgba(8, 203, 0, 0.08);
-  }
-
-  /* 深色模式 hover 效果 */
-  :global(.dark) .post-card:hover .post-title {
-    text-shadow: 0 0 3px rgba(102, 255, 90, 0.2), 0 0 8px rgba(102, 255, 90, 0.12), 0 0 15px rgba(102, 255, 90, 0.08), 0 0 25px rgba(102, 255, 90, 0.06);
-  }
+.post-title {
+  flex: 1;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-link);
+  margin: 0;
+  line-height: 1.4;
+  min-width: 0;
+  font-family: var(--font-sans);
+  /* 限制两行以稳定列表节奏；中文标题密度高，单行截断会过早丢信息。 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .post-right {
@@ -108,55 +107,58 @@ const postTags = computed(() => {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.3rem;
-  min-width: 120px;
+  min-width: 13rem;
 }
 
 .post-meta {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   line-height: 1.5;
-  color: var(--color-text-gray);
-  gap: 0.5rem;
+  color: var(--color-text-muted);
+  gap: 0.35rem;
 }
 
-.post-meta-icon {
-  font-size: 1rem;
-  line-height: 1;
-  margin-right: -0.1rem;
+.post-meta-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+}
+
+.post-meta-label {
+  white-space: nowrap;
 }
 
 .post-meta-value {
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  color: var(--color-text);
-  opacity: 0.9;
+  color: var(--color-text-soft);
+}
+
+.post-comment::before {
+  content: "·";
+  margin-right: 0.35rem;
 }
 
 .post-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  row-gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .post-tag {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
-  margin-right: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  color: var(--color-text-gray);
+  color: var(--color-link);
   border: none;
-  background: transparent;
-  opacity: 0.8;
+  background: var(--color-overlay);
   line-height: 1.5;
-}
-
-.post-tag:last-child {
-  margin-right: 0;
-  padding-right: 0;
 }
 
 /* 移动端适配 */
@@ -170,36 +172,30 @@ const postTags = computed(() => {
 
   .post-title {
     font-size: 1.25rem;
-    line-height: 1.6;
+    line-height: 1.4;
     width: 100%;
   }
 
   .post-right {
     width: 100%;
-    align-items: flex-end;
-    text-align: right;
-    gap: 0.25rem;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.4rem;
     min-width: auto;
   }
 
   .post-meta {
     font-size: 0.8rem;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 0.4rem;
   }
 
-  .post-meta-icon {
-    font-size: 0.9rem;
-  }
-
   .post-tags {
-    row-gap: 0.3rem;
+    justify-content: flex-start;
   }
 
   .post-tag {
-    font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    margin-right: 0.4rem;
+    font-size: 0.8rem;
   }
 }
 </style>

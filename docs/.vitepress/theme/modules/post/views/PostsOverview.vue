@@ -272,7 +272,7 @@ const compareYear = (a: string, b: string) => {
 
 .tag-chip:hover {
   border-color: var(--color-primary);
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 .tag-chip.active {

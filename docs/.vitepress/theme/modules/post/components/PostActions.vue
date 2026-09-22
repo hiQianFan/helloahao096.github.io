@@ -135,18 +135,18 @@ async function runMenuAction(action: () => void | Promise<void>) {
   justify-content: center;
   gap: 0.35rem;
   min-height: 1.85rem;
-  border: 1px solid rgba(8, 203, 0, 0.28);
-  background: rgba(8, 203, 0, 0.06);
-  color: var(--color-primary);
+  border: 1px solid rgb(var(--color-primary-rgb) / 0.28);
+  background: rgb(var(--color-primary-rgb) / 0.06);
+  color: var(--color-link);
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   line-height: 1.2;
   cursor: pointer;
 }
 
 .primary-action {
   padding: 0.2rem 0.62rem;
-  border-radius: 6px 0 0 6px;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -154,7 +154,7 @@ async function runMenuAction(action: () => void | Promise<void>) {
 .menu-trigger {
   width: 1.85rem;
   border-left: 0;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   list-style: none;
 }
 
@@ -164,12 +164,12 @@ async function runMenuAction(action: () => void | Promise<void>) {
 
 .primary-action:hover,
 .menu-trigger:hover {
-  border-color: rgba(8, 203, 0, 0.5);
-  background: rgba(8, 203, 0, 0.12);
+  border-color: rgb(var(--color-primary-rgb) / 0.5);
+  background: rgb(var(--color-primary-rgb) / 0.12);
 }
 
 .action-menu[open] .menu-trigger {
-  background: rgba(8, 203, 0, 0.14);
+  background: rgb(var(--color-primary-rgb) / 0.14);
 }
 
 .menu-panel {
@@ -180,8 +180,9 @@ async function runMenuAction(action: () => void | Promise<void>) {
   min-width: 12rem;
   padding: 0.35rem;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   background: var(--vp-c-bg);
+  /* 浮层脱离文档流，保留阴影以建立层级。 */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
 }
 
@@ -193,10 +194,10 @@ async function runMenuAction(action: () => void | Promise<void>) {
   min-height: 2rem;
   padding: 0.4rem 0.55rem;
   border: 0;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--color-text);
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   text-align: left;
   cursor: pointer;
 }
@@ -210,12 +211,12 @@ async function runMenuAction(action: () => void | Promise<void>) {
 }
 
 .menu-icon {
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
 .menu-item:hover {
-  background: rgba(8, 203, 0, 0.1);
-  color: var(--color-primary);
+  background: rgb(var(--color-primary-rgb) / 0.1);
+  color: var(--color-link);
 }
 
 .menu-separator {
@@ -226,12 +227,12 @@ async function runMenuAction(action: () => void | Promise<void>) {
 
 .action-status {
   color: var(--color-text-gray);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
 }
 
 :global(.dark) .primary-action,
 :global(.dark) .menu-trigger {
-  background: rgba(8, 203, 0, 0.18);
+  background: rgb(var(--color-primary-rgb) / 0.18);
 }
 
 :global(.dark) .menu-panel {

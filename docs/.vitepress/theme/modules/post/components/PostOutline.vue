@@ -75,9 +75,9 @@ const processedHeaders = computed(() => {
   margin: 1.5rem 0 2rem;
   padding: 1.25rem 1.5rem;
   background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  border-radius: var(--radius-card, 12px);
-  box-shadow: 0 2px 8px rgba(8, 203, 0, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  /* 正文模块不叠加阴影，层级由边框与表面色差表达。 */
 }
 
 .outline-title {
@@ -85,9 +85,9 @@ const processedHeaders = computed(() => {
   padding: 0;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand-1);
   font-family: var(--font-sans);
-  border-bottom: 1px solid var(--vp-c-border);
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 0.75rem;
 }
 
@@ -98,20 +98,7 @@ const processedHeaders = computed(() => {
 }
 
 
-/* 深色模式适配 */
-:global(.dark) .post-outline {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-:global(.dark) .outline-title {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-:global(.dark) .outline-link:hover {
-  background: rgba(74, 222, 128, 0.15);
-}
+/* 底色、边框与 hover 均已由 token 在深色下自动切换。 */
 
 /* 响应式设计 */
 @media (max-width: 768px) {

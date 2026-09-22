@@ -15,7 +15,9 @@ import PostsOverview from "./modules/post/views/PostsOverview.vue";
 import InvestOverview from "./modules/invest/views/InvestOverview.vue";
 import ProjectsOverview from "./modules/projects/views/ProjectsOverview.vue";
 import MermaidDiagram from "./modules/mermaid/components/MermaidDiagram.vue";
-import "./custom.css";
+import "./styles/tokens.css";
+import "./styles/base.css";
+import "./styles/vitepress.css";
 
 export default {
   ...DefaultTheme,

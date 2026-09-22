@@ -12,10 +12,12 @@
       <!--  github评论；Sponsor 仅在文章页底部展示，about 页面在正文中有自己的章节 -->
       <template #doc-after>
         <!-- <PostPager /> -->
-        <div v-if="isPostPage" class="sponsor-divider-wrap">
+        <div v-if="isPostPage" class="article-footer-section">
           <Sponsor compact />
         </div>
-        <FindMe v-if="isPostPage" />
+        <div v-if="isPostPage" class="article-footer-section">
+          <FindMe />
+        </div>
         <Comments />
       </template>
     </Layout>
@@ -48,7 +50,7 @@ const isPostPage = computed(() =>
 const { Layout } = DefaultTheme;
 </script>
 <style scoped>
-.sponsor-divider-wrap {
+.article-footer-section {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: 1px solid var(--color-border);

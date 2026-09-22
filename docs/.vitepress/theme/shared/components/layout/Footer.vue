@@ -20,11 +20,11 @@ footer {
   padding: 1.5rem 20px;
   margin-top: 2rem;
   background: var(--vp-c-bg);
-  color: var(--vp-c-text);
+  color: var(--vp-c-text-2);
   flex-shrink: 0;
 }
 a {
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand-1);
   font-weight: bold;
 }
 a:hover {

@@ -133,8 +133,8 @@ function resolveLink(
   display: flex;
   flex-direction: column;
   padding: 1rem 1.25rem;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg);
@@ -142,7 +142,7 @@ function resolveLink(
 }
 
 .pager-link:hover {
-  border-color: var(--vp-c-brand);
+  border-color: var(--vp-c-brand-1);
 }
 
 .pager-link .label {
@@ -154,7 +154,7 @@ function resolveLink(
 .pager-link .title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-brand-1);
   line-height: 1.4;
 }
 

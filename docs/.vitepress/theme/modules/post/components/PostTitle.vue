@@ -104,14 +104,13 @@ const getTagLink = (tag: string) => {
 </script>
 <style scoped>
 .title {
-  color: var(--color-primary);
+  color: var(--color-link);
   font-weight: 500;
   font-size: 2.4rem;
   margin: 0.35em 0 0.25em;
   line-height: 1.25;
   font-family: var(--font-sans);
   text-transform: none;
-  text-shadow: 0 0 18px rgba(8, 203, 0, 0.12);
 }
 
 .meta-block {
@@ -156,7 +155,7 @@ const getTagLink = (tag: string) => {
 
 .meta-value {
   min-width: 0;
-  color: var(--color-primary);
+  color: var(--color-link);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
@@ -173,20 +172,21 @@ const getTagLink = (tag: string) => {
 
 .meta-tag {
   padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(8, 203, 0, 0.2);
-  font-size: 0.75rem;
-  color: var(--color-primary);
-  background: rgba(8, 203, 0, 0.08);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgb(var(--color-primary-rgb) / 0.2);
+  font-size: 0.8rem;
+  color: var(--color-link);
+  background: rgb(var(--color-primary-rgb) / 0.08);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
   display: inline-block;
 }
 
 .meta-tag:hover {
-  background: rgba(8, 203, 0, 0.15);
-  border-color: rgba(8, 203, 0, 0.4);
+  background: rgb(var(--color-primary-rgb) / 0.15);
+  border-color: rgb(var(--color-primary-rgb) / 0.4);
   transform: translateY(-1px);
 }
 
@@ -197,8 +197,8 @@ const getTagLink = (tag: string) => {
   margin-top: 1.25rem;
   padding: 1rem 1.25rem;
   border-left: 3px solid var(--color-primary);
-  background: rgba(8, 203, 0, 0.06);
-  border-radius: 0 12px 12px 0;
+  background: rgb(var(--color-primary-rgb) / 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-family: var(--font-sans);
 }
 
@@ -210,18 +210,10 @@ const getTagLink = (tag: string) => {
   opacity: 0.9;
 }
 
+/* description 与 meta-tag 的底色已随 --color-primary-rgb 自动切换；
+   深色下仅需加深 description 底色以拉开与页面底色的差异。 */
 :global(.dark) .description {
-  background: rgba(8, 203, 0, 0.16);
-}
-
-:global(.dark) .meta-block {
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-:global(.dark) .meta-tag {
-  background: rgba(8, 203, 0, 0.2);
-  border-color: rgba(8, 203, 0, 0.4);
-  color: var(--color-bg);
+  background: rgb(var(--color-primary-rgb) / 0.16);
 }
 
 @media (max-width: 640px) {

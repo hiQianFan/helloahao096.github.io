@@ -155,7 +155,8 @@ onUnmounted(() => {
 .back-to-top.visible:hover {
   background-color: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
-  box-shadow: 0 20px 40px rgba(8, 203, 0, 0.2);
+  /* 浮层脱离文档流，保留阴影；染色随主题切换。 */
+  box-shadow: 0 20px 40px rgb(var(--color-shadow-rgb) / 0.2);
 
   /* hover 轻微上浮 */
   transform: translateY(-4px);
@@ -199,15 +200,15 @@ onUnmounted(() => {
   }
 }
 
-/* 深色模式适配 */
+/* 深色模式适配：亮绿底上用深色图标保证对比度。 */
 .dark .back-to-top {
   color: var(--color-bg);
   background-color: var(--color-primary);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+  box-shadow: var(--shadow-card);
 }
 
 .dark .back-to-top:hover {
   background-color: var(--color-primary-hover);
-  box-shadow: 0 20px 40px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 20px 40px rgb(var(--color-shadow-rgb) / 0.6);
 }
 </style>

@@ -88,7 +88,14 @@ async function config() {
             ["link", {rel: "icon", type: "image/jpg", href: "/QianFan.jpg",},],
             ['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
             ["meta", {name: "author", content: "QianFan",},],
-
+            // 正文字体：与 theme/styles/tokens.css 的 --font-sans 对应。
+            // 放在 head 而非 CSS @import，避免阻塞样式表解析。
+            ["link", {rel: "preconnect", href: "https://fonts.googleapis.com"}],
+            ["link", {rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: ""}],
+            ["link", {
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap",
+            }],
         ],
         transformHead({ pageData }) {
             const title = pageData.frontmatter.title || pageData.title || "QianFan";

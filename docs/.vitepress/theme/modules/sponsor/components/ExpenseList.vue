@@ -62,7 +62,7 @@ const list = computed(() =>
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   background-color: var(--color-surface);
-  box-shadow: 0 8px 20px rgba(8, 203, 0, 0.08);
+  /* 正文模块不叠加阴影：边框已界定容器。 */
 }
 
 .sponsor-table {
@@ -97,10 +97,7 @@ const list = computed(() =>
 
 .sponsor-table .amount {
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-link);
 }
 
-:global(.dark) .sponsor-table-wrap {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-}
 </style>
