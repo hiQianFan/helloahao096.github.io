@@ -5,6 +5,8 @@
 本站内容适合用于技术方案检索、实践步骤参考、问题排查和文章摘要生成。优先读取下方 Markdown 版本；需要完整页面上下文时再访问 HTML 页面。
 
 ## 博客文章
+- [Magpie 服务器部署实践：多设备共用一个模型网关](https://blog.mapin.net/posts/Magpie%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5.md): 记录 Magpie 的 Docker Compose 部署、Caddy 单域名 HTTPS、管理与网关鉴权、出站代理、账号授权、Remote Magpie 接入，以及验证、备份和夜间自动更新经验。
+- [Magpie 模型路由实践：按任务给 Claude Code 和 Codex 分配模型](https://blog.mapin.net/posts/Magpie%20%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1%E5%AE%9E%E8%B7%B5.md): 从账号管理转向模型聚合与意图路由，记录 Magpie 的任务分组、规则配置、推理强度、子代理接入与付费应急策略。
 - [FastAPI 项目工程化结构设计指南](https://blog.mapin.net/posts/FastAPI%20%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.md): 基于实际项目经验，总结 FastAPI 后端项目的工程化目录架构设计原则和最佳实践，提供可复用的、解耦的工程化结构方案
 - [LangChain PGVectorStore 完整指南](https://blog.mapin.net/posts/LangChain%20PGVectorStore%20%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md): LangChain PGVectorStore 实战指南，包含 FastAPI 集成、数据库连接管理、Embedding API 兼容性配置、常见问题解决方案和性能优化建议。基于实际项目经验，专注于生产环境最佳实践。
 - [FastAPI + Vue 3 全栈项目目录结构设计指南](https://blog.mapin.net/posts/%E5%85%A8%E6%A0%88%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1.md): 基于实际项目经验，设计前后端分离的全栈项目目录结构，支持开发模式（热重载）和生产模式（容器化部署），提供最小可维护的核心服务配置和可扩展的可选服务集成方案
